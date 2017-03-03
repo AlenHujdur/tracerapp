@@ -13,7 +13,4 @@ class LocationsController < ApplicationController
     end
   end
 
-  private
-
-  def 
 end
