@@ -1,0 +1,5 @@
+﻿ click on button-Locate me
+ Save latitude & longitude in table
+
+Google API key
+AIzaSyAbi2oNXIqm5L__D2u7re_zIXMSlJ31hnA

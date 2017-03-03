@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tracerapp</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+</head>
+  
+  <body>
+  <div id="map">
+  
+  <h1>Locations#index</h1>
+  <p>Find me in app/views/locations/index.html.erb</p> 
+    
+    <script type="text/javascript">
+      $(document).load(function(){
+        initMap();
+        
+      });
+    </script>
+  </div>
+    
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap">
+    </script>
+    
+  </body>
+  </html>
