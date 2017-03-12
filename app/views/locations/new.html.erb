@@ -1,29 +1,27 @@
-<!DOCTYPE html>
-<html>
+<div id="map">
+<script type="text/javascript">
+      initMap();
+</script>
+</div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap">
+</script>
+<div id="form">
+<%= form_for(@location) do  |f| %>
+  <h1>Location:</h1>
+  <p>
+  <%=f.label :latitude %>
+  <br>
+  <%=f.number_field :latitude, :id=>"latitude", step: :any %>
+  </p>
+  <p>
+  <%=f.label :longitude %>
+  <br>
+  <%=f.number_field :longitude, :id=>"longitude", step: :any %>
+  <p>
+  <br>
+  <%=f.submit "Save" %>
+  <% end %>
+</div>
 
-<head>
-    <title>Locate</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="UTF-8">
-</head>
-  
-  <body>
-  <div id="map">
-  
-  <h1>Locations#NewLocation</h1>
-  <p>Find me in app/views/locations/new.html.erb</p> 
-    
-    <script type="text/javascript">
-      $(document).load(function(){
-        initMap();
         
-      });
-    </script>
-  </div>
-    
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap">
-    </script>
-    
-  </body>
-  </html>
