@@ -1,27 +1,30 @@
+require LocationHelper
 <div id="map">
-<script type="text/javascript">
-      initMap();
-</script>
+  <script type="text/javascript">
+    initMap();
+  </script>
 </div>
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap">
 </script>
+<div class="container-fluid">
 <div id="form">
 <%= form_for(@location) do  |f| %>
   <h1>Location:</h1>
+  <%=f.label :latitude %><br>
   <p>
-  <%=f.label :latitude %>
-  <br>
   <%=f.number_field :latitude, :id=>"latitude", step: :any %>
   </p>
+  <%=f.label :longitude %><br>
   <p>
-  <%=f.label :longitude %>
-  <br>
   <%=f.number_field :longitude, :id=>"longitude", step: :any %>
+  </p>
+  <%=f.label :info %><br>
   <p>
-  <br>
+  <%=f.text_area :info, rows: "4", cols: "50" %>
+  </p>
   <%=f.submit "Save" %>
   <% end %>
 </div>
-
+</div>
         

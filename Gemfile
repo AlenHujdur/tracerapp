@@ -4,8 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-# ruby v 2.4
-ruby "~> 2.4.0"
+# ruby v 2.5
+ruby "~> 2.5.0"
 # db for testing sqlite3
 gem 'sqlite3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootstrap', '~> 4.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
