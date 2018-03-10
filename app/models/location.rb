@@ -1,5 +1,6 @@
 class Location < ApplicationRecord
   #attr_accessor :latitude, :longitude, :created_at
+  belongs_to :user
 
  def self.to_csv(options = {})
    CSV.generate(options) do |csv|
