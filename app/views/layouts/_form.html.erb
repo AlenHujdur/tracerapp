@@ -1,19 +1,19 @@
 <div class="row">
   <div class="well col-md-6 col-md-offset-3">
     <%=form_for @user do |u| %>
-    <%=u.lable :username %>
+    <%=u.label :username %>
     <%=u.text_field :username %>
 
-    <%=u.lable :first_name %>
+    <%=u.label :first_name %>
     <%=u.text_field :first_name %>
 
-    <%=u.lable :last_name %>
+    <%=u.label :last_name %>
     <%=u.text_field :last_name %>
 
-    <%=u.lable :email %>
+    <%=u.label :email %>
     <%=u.text_field :email %>
 
-    <%=u.lable :password %>
+    <%=u.label :password %>
     <%=u.password_field :password %>
     <%=u.submit(@user.new_record? ? 'Register' : 'Edit profile', class: "btn btn-success")%>
 
