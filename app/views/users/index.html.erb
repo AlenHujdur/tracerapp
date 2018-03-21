@@ -1,0 +1,8 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h2>User informations:</h2>
+<% @users.each do |u|%>
+<h3>Username <%= u.username %></h3>
+<h3>Email <%= u.email %></h3>
+<h3>First name <%= u.first_name %></h3>
+<h3>Last name <%= u.last_name %></h3><br><br>
+<%end%>
