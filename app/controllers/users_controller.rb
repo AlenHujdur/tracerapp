@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user = User.find(params[:id])
+      @locations = @user.locations
     end
 
     private
@@ -44,12 +44,12 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :username, :first_name, :last_name, :password)
     end
 
-    def recipe_params
-      params.require(:recipe).permit(:name, :summary, :description, :picture, :style_id, :ingredient_id)
+    def location_params
+      params.require(:location).permit(:latitude, :longitude, :info)
     end
     
     def set_user
-     @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end  
     def require_same_user
       if current_user != @user
