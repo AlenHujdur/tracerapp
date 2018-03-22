@@ -43,4 +43,18 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :username, :first_name, :last_name, :password)
     end
+
+    def recipe_params
+      params.require(:recipe).permit(:name, :summary, :description, :picture, :style_id, :ingredient_id)
+    end
+    
+    def set_user
+     @user = User.find(params[:id])
+    end  
+    def require_same_user
+      if current_user != @user
+        flash[:danger] = "You can only edit your own profile"
+        redirect_to root_path
+      end 
+    end
 end
