@@ -2,13 +2,19 @@ class Location < ApplicationRecord
   #attr_accessor :latitude, :longitude, :created_at
   belongs_to :user
 
- def self.to_csv(options = {})
-   CSV.generate(options) do |csv|
-     csv << column_names
-     all.each do |order|
-       csv << order.attributes.values_at(*column_names)
-     end end
- end
+#csv export
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |order|
+      csv << order.attributes.values_at(*column_names)
+    end end
+  end
+
+#xlsx export
+
+
+#pdf or html export
 
 #  def self.suma(x,y)
 #     @order = Order.find(x)
