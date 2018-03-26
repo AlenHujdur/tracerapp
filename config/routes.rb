@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  #devise_for :users
   root 'locations#index'
-  resources :locations
-  resources :users
-
   get '/login', to: "logins#new"
   post '/login', to: "logins#create"
   get '/logout', to: "logins#destroy"
+  resources :locations
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
