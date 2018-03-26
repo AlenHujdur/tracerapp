@@ -25,7 +25,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-    @location.chef = current_user
+    @location.user = current_user
     if @location.save
       flash[:notice] = "Location saved!"
       respond_to do |format|    
