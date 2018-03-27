@@ -8,15 +8,17 @@
   </head>
   
   <body>
-  <h2>Welcome people</h2>
-  <p>My name is Jong-Hu and I am the creator of <i>Tracerapp</i></p>
+  <center><h2>Welcome people</h2>
+  <p>My name is Jong-Hu and I am the creator of <i>Tracerapp</i></p></center>
   <% @locations.each do |l| %>
   <%# <%= if l.user.username.empty?%>
   <% #"No user..." %>
   <% #else %>
   <h2>User: <%= l.user.username %></h2>
-  <h3>Latitude: <%= l.latitude %></h3>
-  <h3>Longitude: <%= l.longitude %></h3>
+  <h4>Latitude: <%= l.latitude %></h4>
+  <h4>Longitude: <%= l.longitude %></h4>
+  <%= link_to 'Show location', location_path(l.id) %>
+  <h2>=======================</h2>
   <% end %>
   <%= link_to 'Your location?', new_location_path %>
   <p>
