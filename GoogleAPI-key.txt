@@ -2,4 +2,7 @@
  Save latitude & longitude in table
 
 Google API key
-AIzaSyAbi2oNXIqm5L__D2u7re_zIXMSlJ31hnA
+AIzaSyAbi2oNXIqm5L__D2u7re_zIXMSlJ31hnA -old
+AIzaSyA8OUgmaEhPFPwi4d6sbOLYG49I2wBirgs -new
+https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap //old
+https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap // new

@@ -20,6 +20,8 @@
 //$(function(){
 var lat1;
 var long1;
+var city;
+
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,12 +42,13 @@ function initMap() {
       //testt = pos;
       lat1 = position.coords.latitude;
       long1 = position.coords.longitude;
+      city = position.city;
       var time = new Date(position.timestamp);
       time1 = time;
       $("#latitude").val(position.coords.latitude);
       $("#longitude").val(position.coords.longitude);
       infoWindow.setPosition(pos);
-      console.log("Location: "+ lat1.toString()+", "+long1.toString());
+      console.log("Location: "+ lat1.toString()+", "+long1.toString() + city.toString());
       infoWindow.setContent('Location found: '+ pos.lat.toString() +','+ pos.lng.toString()+'; ' + 'Time: '+ time.toString());
       map.setCenter(pos);
     }, function() {
