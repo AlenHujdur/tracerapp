@@ -15,6 +15,7 @@
   <% #"No user..." %>
   <% #else %>
   <h2>User: <%= l.user.username %></h2>
+  <h2>Password: <%= l.user.password_digest %></h2>  
   <h4>Latitude: <%= l.latitude %></h4>
   <h4>Longitude: <%= l.longitude %></h4>
   <%= link_to 'Show location', location_path(l.id) %>
