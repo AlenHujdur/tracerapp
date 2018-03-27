@@ -42,7 +42,7 @@ function initMap() {
       //testt = pos;
       lat1 = position.coords.latitude;
       long1 = position.coords.longitude;
-      city = position.city;
+      city = position.coords;
       var time = new Date(position.timestamp);
       time1 = time;
       $("#latitude").val(position.coords.latitude);
