@@ -45,6 +45,7 @@ function initMap() {
       city = position.coords;
       var time = new Date(position.timestamp);
       time1 = time;
+      $("#time").val(position.timestamp)
       $("#latitude").val(position.coords.latitude);
       $("#longitude").val(position.coords.longitude);
       infoWindow.setPosition(pos);
