@@ -10,8 +10,8 @@
   </head>
   
   <body>
-  <%= render 'layouts/navigation'%>
+  <%= render 'layouts/navigation' unless @disable %>
       <%= yield %>
-  <%= render 'layouts/footer'%>
+  <%= render 'layouts/footer' unless @disable %>
   </body>
 </html>

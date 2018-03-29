@@ -1,9 +1,11 @@
 class LoginsController < ApplicationController
 
   def new
+    @disable = true
   end
   
   def create
+    @disable = true
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
