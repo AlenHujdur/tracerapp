@@ -5,7 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 #devise
-gem 'devise'
+#gem 'devise'
+#camera
+gem "jpeg_camera", "~> 1.3.2"
 # ruby v 2.5
 ruby "~> 2.5.0"
 # db for testing sqlite3
