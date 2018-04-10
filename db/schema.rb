@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322131816) do
+ActiveRecord::Schema.define(version: 20180410105837) do
 
   create_table "locations", force: :cascade do |t|
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "info"
     t.integer  "user_id"
+    t.         "hidden_field"
+    t.         "label"
   end
 
   create_table "users", force: :cascade do |t|

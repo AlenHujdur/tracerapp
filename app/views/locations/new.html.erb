@@ -12,6 +12,17 @@ require LocationHelper
 <div id="form">
 <h4 id="time11"></h4>
 <%= form_for(@location) do  |f| %>
+  <div id="my_camera"></div>
+
+  <input type=button value="Take Snapshot" onClick="take_snapshot()">
+
+  <div class="field">
+    <%= f.hidden_field :image %>
+    <%= f.label :image %>: <br />
+    <div id="results">Your captured image will appear here...</div>
+  </div>
+
+
   <h1>Location:</h1>
   <%=f.label :latitude %><br>
   <p>

@@ -1,7 +1,7 @@
 class Location < ApplicationRecord
   #attr_accessor :latitude, :longitude, :created_at
   belongs_to :user
-
+  mount_base64_uploader :image, ProductImageUploader
 #csv export
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
