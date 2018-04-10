@@ -16,6 +16,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require webcam.min
 //= require_tree .
 //$(function(){
 var lat1;
