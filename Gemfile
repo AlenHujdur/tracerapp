@@ -6,7 +6,10 @@ git_source(:github) do |repo_name|
 end
 #devise
 #gem 'devise'
-
+# for camera: 
+gem 'carrierwave' 
+gem 'carrierwave-base64' 
+gem 'rmagick'
 # ruby v 2.5
 ruby "~> 2.5.0"
 # db for testing sqlite3
