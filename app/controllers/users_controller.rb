@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude, :image, :info)
+      params.require(:location).permit(:latitude, :longitude, :my_camera, :info)
     end
     
     def set_user
