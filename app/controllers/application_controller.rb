@@ -18,4 +18,5 @@ class ApplicationController < ActionController::Base
       redurect_to locations_path
     end
   end
+
 end
