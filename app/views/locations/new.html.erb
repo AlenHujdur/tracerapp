@@ -33,7 +33,7 @@ require LocationHelper
   <input type=button value="Take Snapshot" onClick="take_snapshot()">
 
   <div class="field">
-    <%= f.hidden_field :image, :id=>"my_camera", step: :any %>
+    <%= f.hidden_field :image %>
     <%= f.label :image %>: <br />
     <div id="results">Your captured image will appear here...</div>
   </div>
