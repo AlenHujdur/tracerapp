@@ -14,18 +14,10 @@
           <%# <a class="nav-link" href="#">Features</a> %>
           <%= link_to 'Your location?', new_location_path, :class => 'nav-link' %>
         </li>
-        <li class="nav-item">
-          <%# <a class="nav-link" href="#">Pricing</a> %>
-          <%= link_to 'Login', login_path, :class => 'nav-link' %>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <li class="divider"></li>
-           <li><%= link_to "Logout", logout_path, :class => 'nav-link' %></li>
-        </li>
-
-   
 
 
       </ul>
@@ -43,7 +35,8 @@
          <ul class='dropdown-menu'>
            <li><%= link_to "View Profile", user_path(current_user) %></li>
            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-           <% if current_user %>
+
+    <% if current_user %>
 	    <%end%>
 	   <li class="divider"></li>
            <li><%= link_to "Logout", logout_path %></li>
