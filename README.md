@@ -8,9 +8,8 @@
 
 <ul>System dependencies</ul>
 <li>jpeg camera gem, please check https://github.com/brunoocasali/webcamjs-plus-rails</li>
-<li>this implementation looks promising https://github.com/brunoocasali/webcamjs-plus-rails</li>
 <li>Google Maps js API</li>
-
+https://developers.google.com/maps/documentation/javascript/
 <ul>Configuration</ul>
 <li>For Heroku you need to install Postgresql</li>
 <li>Database creation</li>
