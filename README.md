@@ -7,8 +7,7 @@
 
 
 <ul>System dependencies</ul>
-<li>jpeg gem, please check https://github.com/amw/jpeg_camera</li>
-<li>also to be :checked => https://www.sitepoint.com/jpegcamera-and-canvas/</li>
+<li>jpeg camera gem, please check https://github.com/brunoocasali/webcamjs-plus-rails</li>
 <li>this implementation looks promising https://github.com/brunoocasali/webcamjs-plus-rails</li>
 <li>Google Maps js API</li>
 
