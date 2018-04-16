@@ -9,7 +9,8 @@ class LocationsController < ApplicationController
       format.html
       format.xml {render xml: @locations}
       format.json {render json: @locations}
-      format.csv { render csv: @locations }#{.to_csv}
+      format.csv { send_data @locations.to_csv }
+      #format.csv { render csv: @locations }#{.to_csv}
       #format.xls { send_data @locations.to_csv(col_sep: "\t") }
     end
   end
