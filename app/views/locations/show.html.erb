@@ -1,11 +1,11 @@
 
-<h3>User: <%= @location.user.username %></h3>
-<h3>Latitude: <%= @location.latitude %></h3>
-<h3>Longitude: <%= @location.longitude %></h3>
+<h4>User: <%= @location.user.username %></h4>
+<h4>Latitude: <%= @location.latitude %></h4>
+<h4>Longitude: <%= @location.longitude %></h4>
 
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>
 <% else %>
-<%= picture_for(@location, size: 300)%>
+<%= picture_for(@location, size: 600)%>
 <% end %><br>
 <%= link_to 'Back', locations_path %>
