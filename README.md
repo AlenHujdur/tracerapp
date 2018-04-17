@@ -19,3 +19,7 @@ https://developers.google.com/maps/documentation/javascript/
 * Ruby version 2.5
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment instructions
+
+<ul>Further implementation</ul>
+<li>https://www.sitepoint.com/use-google-maps-rails/</li>
+<li>https://stackoverflow.com/questions/22483738/how-can-a-google-static-map-be-saved-as-an-image-that-can-be-used-not-just-the-u</li>
