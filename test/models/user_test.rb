@@ -8,6 +8,6 @@ class UserTest < ActiveSupport::TestCase
 
   test "test check email" do
     @user.email = " "
-    assert_not @user.valid?, "You need valid email"
+    assert_not @user.assert_not_empty, "You need valid email"
   end
 end
