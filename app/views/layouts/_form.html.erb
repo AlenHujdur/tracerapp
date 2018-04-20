@@ -3,19 +3,19 @@
   <div class="well col-md-6 col-md-offset-3">
     <%=form_for @user do |u| %>
     <%=u.label :username %>
-    <%=u.text_field :username %>
+    <%=u.text_field :username %><br>
 
     <%=u.label :first_name %>
-    <%=u.text_field :first_name %>
+    <%=u.text_field :first_name %><br>
 
     <%=u.label :last_name %>
-    <%=u.text_field :last_name %>
+    <%=u.text_field :last_name %><br>
 
     <%=u.label :email %>
-    <%=u.text_field :email %>
+    <%=u.text_field :email %><br>
 
     <%=u.label :password %>
-    <%=u.password_field :password %>
+    <%=u.password_field :password %><br>
     <%=u.submit(@user.new_record? ? 'Register' : 'Edit profile', class: "btn btn-success")%>
     <%end%>
   </div>
