@@ -26,3 +26,4 @@ https://developers.google.com/maps/documentation/javascript/
 
 * We found a potential security vulnerability in one of your dependencies. - Have to check
 * Saving Google Maps image - needs to be implemented
+* JSON API for Xamarin cross-platform app
