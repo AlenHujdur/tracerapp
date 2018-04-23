@@ -23,3 +23,6 @@ https://developers.google.com/maps/documentation/javascript/
 <ul>Further implementation</ul>
 <li>https://www.sitepoint.com/use-google-maps-rails/</li>
 <li>https://stackoverflow.com/questions/22483738/how-can-a-google-static-map-be-saved-as-an-image-that-can-be-used-not-just-the-u</li>
+
+* We found a potential security vulnerability in one of your dependencies. - Have to check
+* Saving Google Maps image - needs to be implemented
