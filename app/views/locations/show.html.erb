@@ -7,8 +7,6 @@
 <%= @location.image %><br>
 <% else %>
 <%= picture_for(@location, size: 600)%><br>
-url: https://maps.googleapis.com/maps/api/staticmap
-
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&zoom=12&size=400x400&key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q"%>
 <% end %><br>
 <%= link_to 'Back', locations_path %>
