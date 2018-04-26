@@ -7,7 +7,7 @@
 <%= @location.image %><br>
 <% else %>
 <%= picture_for(@location, size: 600)%><br>
-<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?mapTypeId:'satellite'&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
 
 <% end %><br>
 <%= link_to 'Back', locations_path %>
