@@ -25,5 +25,6 @@ https://developers.google.com/maps/documentation/javascript/
 <li>https://stackoverflow.com/questions/22483738/how-can-a-google-static-map-be-saved-as-an-image-that-can-be-used-not-just-the-u</li>
 
 * We found a potential security vulnerability in one of your dependencies. - Have to check
-* Saving Google Maps image - needs to be implemented
+* Saving Google Maps image - needs to be implemented <- DONE
 * JSON API for Xamarin cross-platform app
+* Adding new parameters from api to views like city, state, country
