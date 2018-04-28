@@ -29,5 +29,5 @@ https://developers.google.com/maps/documentation/javascript/
 * Saving Google Maps image - needs to be implemented <- DONE
 * JSON API for Xamarin cross-platform app
 * Adding new parameters from api to views like city, state, country
-# Gem file
+# Gemfile.lock
 ## -> Needs to be updated beacuase of dependencies
