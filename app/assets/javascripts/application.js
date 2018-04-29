@@ -30,7 +30,6 @@ function initMap() {
     zoom: 20,
     mapTypeId: 'satellite'
   });
-  var infoWindow = new google.maps.InfoWindow({map:map, maxWidth: 250});
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -43,12 +42,40 @@ function initMap() {
       //testt = pos;
       lat1 = position.coords.latitude;
       long1 = position.coords.longitude;
+
+      var infoWindow = new google.maps.InfoWindow({map:map, maxWidth: 250});
+      var latlng = {lat: parseFloat(lat1), lng: parseFloat(long1)};
+      var input = document.getElementById('latlng').value;
+      var latlngStr = input.split(',', 2);
+
+      var res;
+      var geocoder = new google.maps.Geocoder;
+      geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === 'OK') {
+          if (results[0]) {
+            map.setZoom(11);
+            var marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+            });
+            //infowindow.setContent(results[0].formatted_address);
+            //infowindow.open(map, marker);
+            res = results[0].formatted_address;
+          } else {
+            //window.alert('No results found');
+          }
+        } else {
+          window.alert('Geocoder failed due to: ' + status);
+        }
+      });
+
       city = position.coords;
       var time = new Date(position.timestamp);
       time1 = time;
       $("#time11").val(time1);
       $("#latitude").val(position.coords.latitude);
       $("#longitude").val(position.coords.longitude);
+      $("#res").val(res);
       infoWindow.setPosition(pos);
       console.log("Location: "+ lat1.toString()+", "+long1.toString() + city.toString());
       infoWindow.setContent('Location found: '+ pos.lat.toString() +','+ pos.lng.toString()+'; ' + 'Time: '+ time.toString());
