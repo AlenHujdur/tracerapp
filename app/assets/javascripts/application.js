@@ -18,7 +18,6 @@
 //= require turbolinks
 //= require webcam.min
 //= require_tree .
-//$(function(){
 var lat1;
 var long1;
 var city;
@@ -39,15 +38,11 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      //testt = pos;
-      //position.coords.latitude = 51.1720277;
-      //position.coords.longitude = 4.4306944;
+
       lat1 = position.coords.latitude;
       long1 = position.coords.longitude;
       var latlng = new google.maps.LatLng(lat1, long1);
-      //var latlng = {lat: parseFloat(lat1), lng: parseFloat(long1)};
-      //var input = document.getElementById('latlng').value;
-      //var latlngStr = input.split(',', 2);
+
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode({'latLng': latlng}, function(results, status) {
             res = results[0].formatted_address;
