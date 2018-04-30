@@ -22,7 +22,7 @@
 var lat1;
 var long1;
 var city;
-
+var res;
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,42 +40,27 @@ function initMap() {
         lng: position.coords.longitude
       };
       //testt = pos;
+      //position.coords.latitude = 51.1720277;
+      //position.coords.longitude = 4.4306944;
       lat1 = position.coords.latitude;
       long1 = position.coords.longitude;
-
-      var infoWindow = new google.maps.InfoWindow({map:map, maxWidth: 250});
-      var latlng = {lat: parseFloat(lat1), lng: parseFloat(long1)};
-      var input = document.getElementById('latlng').value;
-      var latlngStr = input.split(',', 2);
-
-      var res;
-      var geocoder = new google.maps.Geocoder;
-      geocoder.geocode({'location': latlng}, function(results, status) {
-        if (status === 'OK') {
-          if (results[0]) {
-            map.setZoom(11);
-            var marker = new google.maps.Marker({
-              position: latlng,
-              map: map
-            });
-            //infowindow.setContent(results[0].formatted_address);
-            //infowindow.open(map, marker);
+      var latlng = new google.maps.LatLng(lat1, long1);
+      //var latlng = {lat: parseFloat(lat1), lng: parseFloat(long1)};
+      //var input = document.getElementById('latlng').value;
+      //var latlngStr = input.split(',', 2);
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({'latLng': latlng}, function(results, status) {
             res = results[0].formatted_address;
-          } else {
-            //window.alert('No results found');
-          }
-        } else {
-          window.alert('Geocoder failed due to: ' + status);
-        }
       });
-
+      $("#res").val(res);
       city = position.coords;
       var time = new Date(position.timestamp);
       time1 = time;
       $("#time11").val(time1);
+
       $("#latitude").val(position.coords.latitude);
       $("#longitude").val(position.coords.longitude);
-      $("#res").val(res);
+      
       infoWindow.setPosition(pos);
       console.log("Location: "+ lat1.toString()+", "+long1.toString() + city.toString());
       infoWindow.setContent('Location found: '+ pos.lat.toString() +','+ pos.lng.toString()+'; ' + 'Time: '+ time.toString());

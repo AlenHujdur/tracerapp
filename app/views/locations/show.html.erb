@@ -2,7 +2,7 @@
 <h4>User: <%= @location.user.username %></h4>
 <h4>Latitude: <%= @location.latitude %></h4>
 <h4>Longitude: <%= @location.longitude %></h4>
-
+<div id="res"></div>
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>
 <% else %>
