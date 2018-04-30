@@ -2,6 +2,8 @@
 <h4>User: <%= @location.user.username %></h4>
 <h4>Latitude: <%= @location.latitude %></h4>
 <h4>Longitude: <%= @location.longitude %></h4>
+<%= link_to 'Location details',"https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@location.latitude},#{@location.longitude}&sensor=false"%>
+
 <div id="res"></div>
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>
@@ -9,6 +11,6 @@
 <%= picture_for(@location, size: 600)%><br>
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
-<%= image_tag "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&markers=#{@location.latitude}%2C#{@location.longitude}"%>
+<%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&maxwidth=400&latlng=#{@location.latitude},#{@location.longitude}"%>
 <% end %><br>
 <%= link_to 'Back', locations_path %>

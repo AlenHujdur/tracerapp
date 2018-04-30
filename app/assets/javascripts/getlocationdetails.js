@@ -15,7 +15,7 @@ function errorFunction(){
 }
 
   function initialize() {
-    geocoder = new google.maps.Geocoder(document.getElementById('details'));
+    geocoder = new google.maps.Geocoder(document.getElementById('map'));
   }
 
   function codeLatLng(lat, lng) {
@@ -44,7 +44,7 @@ function errorFunction(){
         $("#res1").value(city.short_name);
         $("#res2").value(city.long_name);
         
-        alert(city.short_name + " " + city.long_name)
+        //alert(city.short_name + " " + city.long_name)
 
 
         } else {

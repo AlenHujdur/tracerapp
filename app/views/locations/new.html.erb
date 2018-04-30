@@ -1,29 +1,21 @@
-require LocationHelper
+
 <div id="map">
   <script type="text/javascript">
     initMap();
-  </script>
-</div>
-<div id="details">
-  <script type="text/javascript">
     initialize();
   </script>
 </div>
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initialize">
-</script>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap">
-</script>
-
+ <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap', :async => true %>
 <div class="container-fluid">
 <div id="form">
 <h4 id="time11"></h4>
-<%= form_for(@location) do  |f| %>
+<%= form_for(@location) do |f| %>
   <h4>Location:</h4>
-  <div id="res"></div>
-  <div id="res1"></div>
-  <div id="res2"></div>
+  <div id="map">
+    <div id="res"></div>
+    <div id="res1"></div>
+    <div id="res2"></div>
+  </div>
   <%=f.label :latitude %><br>
   <p>
   <%=f.number_field :latitude, :id=>"latitude", step: :any %>
@@ -48,7 +40,8 @@ require LocationHelper
     <div id="results">Your captured image will appear here...</div>
   </div>
  <% end %>
-</div>
 
+</div>
+ <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initialize' %>
 </div>
         
