@@ -31,6 +31,9 @@ https://developers.google.com/maps/documentation/javascript/
 *https://github.com/processing/p5.js/wiki/Loading-external-files:-AJAX,-XML,-JSON
 *https://dzone.com/articles/internal-vs-external-apis-1
 *https://revs.runtime-revolution.com/integrating-a-third-party-api-with-rails-5-134f960ddbba
+*https://mixandgo.com/blog/what-you-need-to-know-when-working-with-external-apis-in-rails
+*https://mkdev.me/en/posts/writing-an-api-gem-how-to-write-tests-for-an-external-api
+*https://www.twilio.com/blog/2015/10/4-ways-to-parse-a-json-api-with-ruby.html
 * Adding new parameters from api to views like city, state, country
 # Gemfile.lock
 ## -> Needs to be updated beacuase of dependencies
