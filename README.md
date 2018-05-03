@@ -30,6 +30,7 @@ https://developers.google.com/maps/documentation/javascript/
 * JSON API for Xamarin cross-platform app - added for location model / for show-view with details like country, state, city, postal code, street and number(through latitude and longitude parameters)
 *https://github.com/processing/p5.js/wiki/Loading-external-files:-AJAX,-XML,-JSON
 *https://dzone.com/articles/internal-vs-external-apis-1
+*https://revs.runtime-revolution.com/integrating-a-third-party-api-with-rails-5-134f960ddbba
 * Adding new parameters from api to views like city, state, country
 # Gemfile.lock
 ## -> Needs to be updated beacuase of dependencies
