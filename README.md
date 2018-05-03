@@ -28,6 +28,7 @@ https://developers.google.com/maps/documentation/javascript/
 * We found a potential security vulnerability in one of your dependencies. - Have to check
 * Saving Google Maps image - needs to be implemented <- DONE
 * JSON API for Xamarin cross-platform app - added for location model / for show-view with details like country, state, city, postal code, street and number(through latitude and longitude parameters)
+*https://github.com/processing/p5.js/wiki/Loading-external-files:-AJAX,-XML,-JSON
 * Adding new parameters from api to views like city, state, country
 # Gemfile.lock
 ## -> Needs to be updated beacuase of dependencies
