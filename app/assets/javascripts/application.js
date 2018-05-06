@@ -17,7 +17,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require webcam.min
-//= require getlocation
-//= require getlocationdetails
-//= require camera
+//= require geolocation/getlocation
+//= require geolocation/getlocationdetails
+//= require camera/camera
 //= require_tree .
