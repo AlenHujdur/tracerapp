@@ -15,8 +15,8 @@ class Map
   end
 end
 
-m = Map.new
-
-m.location.each do |l|
-  put "Lokacija: #{l['address_components']}"
-end
+  m = Map.new
+  p "Adress: #{m.location['results'][0]['address_components'][1]['long_name']}, #{m.location['results'][0]['address_components'][0]['long_name']}, #{m.location['results'][0]['address_components'][2]['long_name']}"
+  p "City: #{m.location['results'][2]['address_components'][1]['long_name']}"
+  p "Region: #{m.location['results'][2]['address_components'][2]['long_name']}"
+  p "Country: #{m.location['results'][0]['address_components'][6]['long_name']}"
