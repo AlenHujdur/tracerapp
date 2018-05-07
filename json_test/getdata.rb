@@ -20,3 +20,6 @@ end
   p "City: #{m.location['results'][2]['address_components'][1]['long_name']}"
   p "Region: #{m.location['results'][2]['address_components'][2]['long_name']}"
   p "Country: #{m.location['results'][0]['address_components'][6]['long_name']}"
+
+  city = m.location['results'][2]['address_components'][1]['long_name']
+  p city.to_s
