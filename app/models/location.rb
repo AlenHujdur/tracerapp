@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+  include GetLocation
   #attr_accessor :latitude, :longitude, :created_at
   belongs_to :user
   mount_base64_uploader :image, LocationImageUploader
