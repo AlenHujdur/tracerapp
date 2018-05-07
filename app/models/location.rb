@@ -4,6 +4,9 @@ class Location < ApplicationRecord
   belongs_to :user
   mount_base64_uploader :image, LocationImageUploader
 #csv export
+  def get_address
+    address
+  end
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
