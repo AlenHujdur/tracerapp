@@ -1,15 +1,9 @@
-
 module GetLocation
   require 'rubygems'
   require 'httparty'
 
   class Map
     include HTTParty
-    #base_uri = "maps.googleapis.com/"
-    #response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=51.171880885597204,4.430588460447524&sensor=false')
-    #puts response.headers.inspect
-
-
     def location
       self.class.get('https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=51.171880885597204,4.430588460447524&sensor=false')
     end
@@ -22,7 +16,9 @@ module GetLocation
     # p "Country: #{m.location['results'][0]['address_components'][6]['long_name']}"
 
     city = m.location['results'][2]['address_components'][1]['long_name']
-    address = "#{m.location['results'][0]['address_components'][1]['long_name']}, #{m.location['results'][0]['address_components'][0]['long_name']}, #{m.location['results'][0]['address_components'][2]['long_name']}"
+    def self.get_address
+      address = "#{m.location['results'][0]['address_components'][1]['long_name']}, #{m.location['results'][0]['address_components'][0]['long_name']}, #{m.location['results'][0]['address_components'][2]['long_name']}"
+    end
     # p "City: #{m.location['results'][2]['address_components'][1]['long_name']}"
     region = m.location['results'][2]['address_components'][2]['long_name']
     country = m.location['results'][0]['address_components'][6]['long_name']

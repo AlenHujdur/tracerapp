@@ -4,7 +4,7 @@
 <h4>Longitude: <%= @location.longitude %></h4>
 <strong>
 Details:
-<%= @location.get_address %>
+<%= @location.address %>
 </strong>
 <%= link_to 'Location details',"https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@location.latitude},#{@location.longitude}&sensor=false"%>
 

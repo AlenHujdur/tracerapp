@@ -1,6 +1,5 @@
 class LocationsController < ApplicationController
   #skip_before_action :verify_authenticity_token
-
   before_action :require_same_user, only: [:edit, :update]
 
   def index

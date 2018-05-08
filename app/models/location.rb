@@ -1,11 +1,11 @@
 class Location < ApplicationRecord
-  include GetLocation
   #attr_accessor :latitude, :longitude, :created_at
   belongs_to :user
   mount_base64_uploader :image, LocationImageUploader
-#csv export
-  def get_address
-    address
+  #csv export
+  include GetLocation
+  def self.address
+    get_address
   end
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
