@@ -3,7 +3,7 @@ class Location < ApplicationRecord
   belongs_to :user
   mount_base64_uploader :image, LocationImageUploader
   #csv export
-  include GetLocation
+  include LocationHelper
   def self.address
     get_address
   end

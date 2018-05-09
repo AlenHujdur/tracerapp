@@ -2,10 +2,6 @@
 <h4>User: <%= @location.user.username %></h4>
 <h4>Latitude: <%= @location.latitude %></h4>
 <h4>Longitude: <%= @location.longitude %></h4>
-<strong>
-Details:
-<%= @location.address %>
-</strong>
 <%= link_to 'Location details',"https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@location.latitude},#{@location.longitude}&sensor=false"%>
 
 <div id="res"></div>
@@ -15,6 +11,11 @@ Details:
 <%= picture_for(@location, size: 600)%><br>
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
-<%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&maxwidth=400&latlng=#{@location.latitude},#{@location.longitude}"%>
+<%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&maxwidth=400&latlng=#{@location.latitude},#{@location.longitude}"%><br>
+<strong>
+Details:
+<% LocationHelper::Map.new.location(@location.latitude,@location.longitude) %>
+<% LocationHelper::Map.new.get_address %>
+</strong>
 <% end %><br>
 <%= link_to 'Back', locations_path %>
