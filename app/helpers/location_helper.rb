@@ -12,10 +12,8 @@ module LocationHelper
       self.class.get(@str)
     end
         
-    def get_address
-       m = Map.new
-       m.location(@lat,@long)    
-      address = "#{m.location['results'][0]['address_components'][1]['long_name']}, #{m.location['results'][0]['address_components'][0]['long_name']}, #{m.location['results'][0]['address_components'][2]['long_name']}"
+    def get_address   
+      address = "#{Map.location.new(@lat,@long)['results'][0]['address_components'][1]['long_name']}, #{Map.location.new(@lat,@long)['results'][0]['address_components'][0]['long_name']}, #{Map.location.new(@lat,@long)['results'][0]['address_components'][2]['long_name']}"
     end
 
   end

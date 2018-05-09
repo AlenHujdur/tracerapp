@@ -12,10 +12,11 @@
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=600x600&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"%>
 <%= image_tag "https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&maxwidth=400&latlng=#{@location.latitude},#{@location.longitude}"%><br>
-<strong>
-Details:
-<% LocationHelper::Map.new.location(@location.latitude,@location.longitude) %>
-<% LocationHelper::Map.new.get_address %>
-</strong>
+<%# <% @l = Location.new %> 
+ <% x = @location.latitude %>
+ <% y = @location.longitude %>
+<%# <strong> %>
+ Details:<% @locat @get_address %> 
+<%# </strong> %>
 <% end %><br>
 <%= link_to 'Back', locations_path %>
