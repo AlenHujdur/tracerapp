@@ -37,3 +37,4 @@ https://developers.google.com/maps/documentation/javascript/
 *https://mkdev.me/en/posts/writing-an-api-gem-how-to-write-tests-for-an-external-api
 *https://www.twilio.com/blog/2015/10/4-ways-to-parse-a-json-api-with-ruby.html
 * Adding new parameters from api to views like city, state, country - DONE
+* Make a request through ajax
