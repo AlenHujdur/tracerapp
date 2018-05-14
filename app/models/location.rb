@@ -5,8 +5,8 @@ class Location < ApplicationRecord
   #csv export
   include GetLocation
 
-  def newmap
-    @a = Map.new
+  def newmap(lat,long)
+    @a = Map.new(lat,long)
   end
     # include HTTParty
     # def self.loc(lat, long)

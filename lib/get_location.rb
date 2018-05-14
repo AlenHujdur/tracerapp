@@ -4,13 +4,18 @@ module GetLocation
 
   class Map
     include HTTParty
+    def initialize(lat, long)
+      @lat = lat
+      @long = long
+    end 
     def location
-      self.class.get('https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=51.171880885597204,4.430588460447524&sensor=false')
+      @m = Map.new(@lat,@long)
+      self.class.get("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@lat},#{@long}&sensor=false")
     end
-    @m = Map.new    
-    @city = @m.location['results'][2]['address_components'][1]['long_name']
+        
+    # @city = @m.location['results'][2]['address_components'][1]['long_name']
     def get_address
-      @m = Map.new
+      # @m = Map.new
       @address = "#{@m.location['results'][0]['address_components'][1]['long_name']}, #{@m.location['results'][0]['address_components'][0]['long_name']}, #{@m.location['results'][0]['address_components'][2]['long_name']}"
     end
   end
