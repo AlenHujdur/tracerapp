@@ -3,7 +3,7 @@
 <h4>Latitude: <%= @location.latitude %></h4>
 <h4>Longitude: <%= @location.longitude %></h4>
 <%= link_to 'Location details',"https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@location.latitude},#{@location.longitude}&sensor=false"%><br>
-<%=@map%>
+<%=@map.get_address%>
 <div id="res"></div>
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>

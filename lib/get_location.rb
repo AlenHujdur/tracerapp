@@ -15,8 +15,10 @@ module GetLocation
         
     # @city = @m.location['results'][2]['address_components'][1]['long_name']
     def get_address
-      # @m = Map.new
-      @address = "#{@m.location['results'][0]['address_components'][1]['long_name']}, #{@m.location['results'][0]['address_components'][0]['long_name']}, #{@m.location['results'][0]['address_components'][2]['long_name']}"
+      @m = location #Map.new(@lat,@long)  
+      #location = self.class.get("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@lat},#{@long}&sensor=false")
+      self.class.get("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@lat},#{@long}&sensor=false")      
+      @address = "#{@m['results'][0]['address_components'][1]['long_name']}, #{@m['results'][0]['address_components'][0]['long_name']}, #{@m['results'][0]['address_components'][2]['long_name']}"
     end
   end
 
