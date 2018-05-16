@@ -23,8 +23,6 @@ class LocationsController < ApplicationController
     @location = Location.find(location_id)
       lat = @location.latitude
       long = @location.longitude
-    # @locat = Location.loc(lat,long)
-    # @get_adress = Location.get_address
     @map = @location.newmap(lat,long)
   end
 
