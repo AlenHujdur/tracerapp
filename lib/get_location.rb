@@ -27,7 +27,7 @@ module GetLocation
       c = location
       if c.nil?
         p c.response.code
-      elsif c['results'][0]['address_components'][6]['long_name'] == nil 
+      elsif c['results'][0]['address_components'][6].andand['long_name'].nil? 
         return "No country name"  
       else
         country = "#{c['results'][0]['address_components'][6]['long_name']}"
