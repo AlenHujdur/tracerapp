@@ -1,12 +1,9 @@
 
 # README
 
-<h2>Tracerapp version 0.5</h2>
+<h2>Tracerapp version 0.8</h2>
 
 <h4>Things you may want to cover:</h4>
-
-
-
 <ul>System dependencies</ul>
 <li>jpeg camera gem, please check https://github.com/brunoocasali/webcamjs-plus-rails</li>
 <li>Google Maps js API</li>
@@ -25,7 +22,6 @@ https://developers.google.com/maps/documentation/javascript/
 <li>https://www.sitepoint.com/use-google-maps-rails/</li>
 <li>https://stackoverflow.com/questions/22483738/how-can-a-google-static-map-be-saved-as-an-image-that-can-be-used-not-just-the-u</li>
 
-* We found a potential security vulnerability in one of your dependencies. - Have to check
 * Saving Google Maps image - needs to be implemented <- DONE
 * JSON API for Xamarin cross-platform app - added for location model / for show-view with details like country, state, city, postal code, street and number(through latitude and longitude parameters)
 *https://www.rubydoc.info/github/jnunemaker/httparty/HTTParty/ClassMethods
@@ -38,3 +34,12 @@ https://developers.google.com/maps/documentation/javascript/
 *https://www.twilio.com/blog/2015/10/4-ways-to-parse-a-json-api-with-ruby.html
 * Adding new parameters from api to views like city, state, country - DONE
 * Make a request through ajax
+
+Current stage:
+-> Country code, name , street, city, latitude, longitude has been implemented
+-> TODO:
+  -> Tests
+  -> Street images
+  -> Additional APIs like Microsoft Bing, Yahoo, etc
+  -> Xamarin cross-platform app
+  
