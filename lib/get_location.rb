@@ -26,9 +26,9 @@ module GetLocation
     def get_country
       c = location
       if country = "#{c['results'][0]['address_components'][6].andand['long_name']}" == ''
-        return 'no country name'
+        'no country name'
       else 
-        return country = "#{c['results'][0]['address_components'][6].andand['long_name']}"
+        country = "#{c['results'][0]['address_components'][6].andand['long_name']}"
       end
     end
     def get_region
@@ -45,19 +45,19 @@ module GetLocation
     end
 
     def get_details
-      return "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@lat},#{@long}&sensor=false"
+      "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&latlng=#{@lat},#{@long}&sensor=false"
     end
 
     def get_map_type
-      return "http://maps.googleapis.com/maps/api/staticmap?&size=600x600&sensor=false&zoom=16&markers=#{@lat}%2C#{@long}"
+      "http://maps.googleapis.com/maps/api/staticmap?&size=600x600&sensor=false&zoom=16&markers=#{@lat}%2C#{@long}"
     end
 
     def get_satellite_type
-      return "http://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=600x600&sensor=false&zoom=16&markers=#{@lat}%2C#{@long}"
+      "http://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=600x600&sensor=false&zoom=16&markers=#{@lat}%2C#{@long}"
     end
 
     def get_image_location
-      return "https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&maxwidth=400&latlng=#{@lat},#{@long}"
+      "https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&maxwidth=400&latlng=#{@lat},#{@long}"
     end
   end
 
