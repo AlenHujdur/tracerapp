@@ -22,7 +22,6 @@ https://developers.google.com/maps/documentation/javascript/
 <li>https://www.sitepoint.com/use-google-maps-rails/</li>
 <li>https://stackoverflow.com/questions/22483738/how-can-a-google-static-map-be-saved-as-an-image-that-can-be-used-not-just-the-u</li>
 
-* Saving Google Maps image - needs to be implemented <- DONE
 * JSON API for Xamarin cross-platform app - added for location model / for show-view with details like country, state, city, postal code, street and number(through latitude and longitude parameters)
 *https://www.rubydoc.info/github/jnunemaker/httparty/HTTParty/ClassMethods
 *https://youtu.be/vDbBv3k6Fzs
@@ -35,11 +34,11 @@ https://developers.google.com/maps/documentation/javascript/
 * Adding new parameters from api to views like city, state, country - DONE
 * Make a request through ajax
 
-Current stage:
--> Country code, name , street, city, latitude, longitude has been implemented
--> TODO:
-  -> Tests
-  -> Street images
-  -> Additional APIs like Microsoft Bing, Yahoo, etc
-  -> Xamarin cross-platform app
+*Current stage:
+*Country code, name , street, city, latitude, longitude has been implemented
+*TODO:
+*-Tests
+*-Street images
+*-Additional APIs like Microsoft Bing, Yahoo, etc
+*-Xamarin cross-platform app
   
