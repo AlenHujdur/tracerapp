@@ -1,7 +1,5 @@
 class LocationsController < ApplicationController
-  #skip_before_action :verify_authenticity_token
-  before_action :require_same_user, only: [:edit, :update]
-
+  before_action :require_user, except: [:show, :index]
   def index
     @locations = Location.all
     respond_to do |format|
@@ -9,8 +7,6 @@ class LocationsController < ApplicationController
       format.xml {render xml: @locations}
       format.json {render json: @locations}
       format.csv { send_data @locations.to_csv }
-      #format.csv { render csv: @locations }#{.to_csv}
-      #format.xls { send_data @locations.to_csv(col_sep: "\t") }
     end
   end
 
@@ -33,14 +29,10 @@ class LocationsController < ApplicationController
       flash[:notice] = "Location saved!"
       respond_to do |format|    
       format.html { redirect_to location_path(@location), notice: 'Location was successfully created.' }
-      #format.js
       end
     else
        render 'new'
     end
-    #   format.xml {render xml: @locations}
-    #   format.json {render json: @locations}
-    #   format.csv {render csv: @locations}
   end
 
   private
