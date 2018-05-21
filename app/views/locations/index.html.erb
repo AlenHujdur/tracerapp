@@ -10,11 +10,8 @@
   <body>
   <center><h2>Welcome people</h2>
   <div id="time">ClickMe</div>
-  <p>My name is Jong-Hu and I am the creator of <i>Tracerapp</i></p></center>
+  <p>Welcome to <i>Tracerapp</i></p></center>
   <% @locations.each do |l| %>
-  <%# <%= if l.user.username.empty?%>
-  <% #"No user..." %>
-  <% #else %>
   <h4>User: <%= l.user.username %></h4>
   <p>
   Latitude: <%= l.latitude %><br>
@@ -26,7 +23,6 @@
   <p>
   Download:
   <%= link_to "CSV", locations_path(format: "csv") %>
-  <%= link_to "XLS", locations_path(format: "xls")%>
   </p>
     
   </body>
