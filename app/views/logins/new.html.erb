@@ -1,8 +1,7 @@
-<%= render 'shared/page_title', title: 'Log in' %>
-
+<%= render 'shared/page_title', title: 'Log in', :id => 'login' %>
+<div id="login">
 <div class="row">
-  <!--well col-md-6 col-md-offset-3 -->
-  <div class="col-md-12 col-md-offset-3">
+<div class="col-md-5" >
     <%= form_tag '/login' do %>
 
       <%= label_tag :email %><br>
@@ -15,4 +14,5 @@
 
     <% end %>
   </div>
+</div>
 </div>
