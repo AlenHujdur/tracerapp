@@ -8,7 +8,6 @@ City: <%= @map.get_city %><br>
 Address: <%= @map.get_address %><br>
 <%= link_to 'Location details', @map.get_details %><br>
 
-
 <div id="res"></div>
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>
