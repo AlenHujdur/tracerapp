@@ -1,7 +1,8 @@
-<%= render 'shared/page_title', title: 'Log in', :id => 'login' %>
+
 <div id="login">
+<%= render 'shared/page_title', title: 'Log in'%>
 <div class="row">
-<div class="col-md-5" >
+<div class="col-md-12" >
     <%= form_tag '/login' do %>
 
       <%= label_tag :email %><br>
