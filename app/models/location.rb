@@ -1,6 +1,7 @@
 class Location < ApplicationRecord
   #attr_accessor :latitude, :longitude, :created_at
   belongs_to :user
+  has_many :cameras
   mount_base64_uploader :image, LocationImageUploader
   #csv export
   include GetLocation
