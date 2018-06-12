@@ -5,7 +5,6 @@ class CamerasController < ApplicationController
   end
 
   private
-
   def camera_params
     params.require(:camera).permit(:image, :map_image)
   end
