@@ -1,16 +1,16 @@
 <script type="text/javascript">
-  initialize();
+initialize();
 </script>
 
 <div id="my_camera"></div>
 
-  <input type=button value="Take Snapshot" onClick="take_snapshot()">
+<input type=button value="Take Snapshot" onClick="take_snapshot()">
 
-  <div class="field">
-  <%= form_for(@camera) do |l| %>
-    <%= l.hidden_field :image %>
-    <%= l.label :image %>: <br />
-  <div id="results">Your captured image will appear here...</div>
-  <%= l.submit "Save" %>
-  <% end %>
+<div class="field">
+<%= form_for(@camera) do |l| %>
+  <%= l.hidden_field :image %>
+  <%= l.label :image %>: <br />
+<div id="results">Your captured image will appear here...</div>
+<%= l.submit "Save" %>
+<% end %>
 </div>
