@@ -16,8 +16,10 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require turbolinks
+
 //= require webcam.min
 //= require geolocation/getlocation
 //= require geolocation/getlocationdetails
 //= require camera/camera
+
 //= require_tree .
