@@ -1,10 +1,10 @@
 
 # README
 
-<h2>Tracerapp version 0.8</h2>
+<h2>Tracerapp version 1.0</h2>
 
-<h4>Things you may want to cover:</h4>
-<ul>System dependencies</ul>
+
+
 <li>jpeg camera gem, please check https://github.com/brunoocasali/webcamjs-plus-rails</li>
 <li>Google Maps js API</li>
 https://developers.google.com/maps/documentation/javascript/
