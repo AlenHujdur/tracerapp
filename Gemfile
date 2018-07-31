@@ -10,8 +10,8 @@ end
 gem 'carrierwave' 
 gem 'carrierwave-base64' 
 gem 'rmagick'
-# ruby v 2.5
-ruby "~> 2.5.0"
+# ruby v 2.5.1
+ruby "~> 2.5.1"
 # db for testing sqlite3
 gem 'sqlite3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
