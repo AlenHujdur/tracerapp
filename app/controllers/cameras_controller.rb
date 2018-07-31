@@ -6,7 +6,7 @@ class CamerasController < ApplicationController
 
   def create
     @camera = Camera.new(camera_params)
-    @camera.save
+    @camera.save!
   end
   private
   def camera_params
