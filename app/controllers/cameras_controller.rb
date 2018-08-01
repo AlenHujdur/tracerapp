@@ -2,12 +2,11 @@ class CamerasController < ApplicationController
 
   def new
     @camera = Camera.new
-    @location = Location.new
   end
 
   def create
     #@camera = Camera.new(camera_params)
-    @location = Location.new(location_params)
+    @location = Location.camera.new(camera_params)
     #@camera.location.save!
     @location.user = current_user
     if @location.save
@@ -21,9 +20,8 @@ class CamerasController < ApplicationController
     
   end
   private
-  
-  def location_params
-    params.require(:location).permit(:latitude, :longitude, :info, :image, :map_image, :user_id)
+  def camera_params
+    params.require(:camera).permit(:image)
   end
 
   def require_same_user
