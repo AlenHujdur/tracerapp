@@ -6,7 +6,7 @@ class CamerasController < ApplicationController
 
   def create
     #@camera = Camera.new(camera_params)
-    @camera = Camera.new(camera_params)
+    @camera = @location.cameras.create(camera_params)
     #@camera.location.save!
     #@camera.user = current_user
     if @camera.save
