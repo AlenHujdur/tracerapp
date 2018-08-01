@@ -6,10 +6,10 @@ class CamerasController < ApplicationController
 
   def create
     #@camera = Camera.new(camera_params)
-    @location = Location.camera.new(camera_params)
+    @camera = Camera.new(camera_params)
     #@camera.location.save!
-    @location.user = current_user
-    if @location.save
+    #@camera.user = current_user
+    if @camera.save
       flash[:notice] = "Location saved!"
       respond_to do |format|    
       format.html { redirect_to location_path(@location), notice: 'Location was successfully created.' }
@@ -21,7 +21,7 @@ class CamerasController < ApplicationController
   end
   private
   def camera_params
-    params.require(:camera).permit(:image)
+    params.require(:camera).permit(:image,:map_image)
   end
 
   def require_same_user
