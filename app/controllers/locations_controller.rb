@@ -37,7 +37,7 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:latitude, :longitude, :info, :image, :map_image, :user_id)
+    params.require(:location).permit(:latitude, :longitude, :info, :user_id, :camera_id)
   end
 
   def require_same_user

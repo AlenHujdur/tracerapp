@@ -2,8 +2,8 @@ class CamerasController < ApplicationController
 
   def new
     #@camera = Camera.new
-    #location_id = params[:id]
-    @location = Location.find(params[:id])
+    location_id = params[:id]
+    @location = Location.find(location_id)
   end
 
   def create
@@ -13,6 +13,7 @@ class CamerasController < ApplicationController
       #respond_to do |format|    
       #format.html { redirect_to location_path(@location), notice: 'Location was successfully created.' }
       #end
+      redirect_to location_path(@location)
     else
        render 'new'
     end
