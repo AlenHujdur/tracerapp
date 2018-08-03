@@ -3,7 +3,7 @@ class CamerasController < ApplicationController
   def new
     #@camera = Camera.new
     #location_id = params[:id]
-    @location = Location.find(params[:id])
+    #@location = Location.find(params[:id])
   end
 
   def create
