@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180801210256) do
+ActiveRecord::Schema.define(version: 20180802212500) do
 
   create_table "cameras", force: :cascade do |t|
     t.string   "image"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180801210256) do
     t.datetime "updated_at", null: false
     t.string   "info"
     t.integer  "user_id"
+    t.integer  "camera_id"
   end
 
   create_table "users", force: :cascade do |t|
