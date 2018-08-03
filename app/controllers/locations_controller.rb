@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    @camera = Camera.new
   end
   
   def show
