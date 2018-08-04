@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post '/login', to: "logins#create"
   get '/logout', to: "logins#destroy"
 
-  get 'locations/:locations/:id', to: 'cameras#new'
   resources :locations
   resources :users
   resources :cameras
