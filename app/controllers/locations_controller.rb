@@ -11,16 +11,17 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @camera = Camera.new
     @location = Location.new
+    @camera = Camera.new
+    #@cameras = @location.cameras.create(camera_params)
   end
   
   def show
     location_id = params[:id]
     @location = Location.find(location_id)
+    @camera = Camera.find(camera_params)
       lat = @location.latitude
       long = @location.longitude
-    @camera = location.camera
     @map = @location.newmap(lat,long)
   end
 
