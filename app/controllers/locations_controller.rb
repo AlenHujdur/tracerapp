@@ -19,7 +19,7 @@ class LocationsController < ApplicationController
   def show
     location_id = params[:id]
     @location = Location.find(location_id)
-    @camera = Camera.find(camera_params)
+    @camera = @location.image
       lat = @location.latitude
       long = @location.longitude
     @map = @location.newmap(lat,long)
@@ -29,7 +29,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @camera = Camera.new(camera_params)
     @location.user = current_user
-    if(@location.save && @camera.save)
+    if @location.save
       flash[:notice] = "Location saved!"
       respond_to do |format|    
       format.html { redirect_to location_path(@location), notice: 'Location was successfully created.' }
