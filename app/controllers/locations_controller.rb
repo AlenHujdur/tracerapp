@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
   end
 
   def new
+    @camera = Camera.new
     @location = Location.new
   end
   
@@ -19,25 +20,32 @@ class LocationsController < ApplicationController
     @location = Location.find(location_id)
       lat = @location.latitude
       long = @location.longitude
+    @camera = location.camera
     @map = @location.newmap(lat,long)
   end
 
   def create
     @location = Location.new(location_params)
+    @camera = Camera.new(camera_params)
     @location.user = current_user
-    if @location.save
+    if(@location.save && @camera.save)
       flash[:notice] = "Location saved!"
       respond_to do |format|    
       format.html { redirect_to location_path(@location), notice: 'Location was successfully created.' }
-      end
+    end
     else
        render 'new'
     end
   end
 
   private
+  
+  def camera_params
+    params.require(:camera).permit(:image)
+  end
+
   def location_params
-    params.require(:location).permit(:latitude, :longitude, :info, :user_id, :camera_id)
+    params.require(:location).permit(:latitude, :longitude, :info, :user_id, :map_image, :camera_id)
   end
 
   def require_same_user
