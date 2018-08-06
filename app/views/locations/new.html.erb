@@ -5,7 +5,6 @@
     initialize();
   </script>
 </div>
- <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap', :async => true %>
 <div class="container-fluid">
 <div id="form">
 <h4 id="time11"></h4>
@@ -26,20 +25,17 @@
   <p>
   <%=f.text_area :info, rows: "4", cols: "50" %>
   </p>
-  <%=f.submit "Save" %>
-  <%= link_to 'Take a picture', {:action=>"new", :controller=>"cameras"} %>
-  <%# <div id="my_camera"></div>
-
-  <input type=button value="Take Snapshot" onClick="take_snapshot()">
-
-  <div class="field">
-    <%= f.hidden_field :image %>
-    <!--<#%= f.label :image %>: <br /> !-->
-    <!--div id="results">Your captured image will appear here...</div>
-  </div> %> !-->
+  <%= link_to 'Take a picture', {:action=>"new", :controller=>"locations"} %>
+  <div id="my_camera"></div>
+  <inline><input type=button value="Take Snapshot" onClick="take_snapshot()"> <%=f.submit "Save" %></inline><br />
+   <%= f.fields_for(@camera) do |camera_form| %>
+    <%= camera_form.hidden_field :image %>
+    <%= camera_form.label :image %>: <br />
+   <% end %>
+    <div id="results">Your captured image will appear here...</div><br />
  <% end %>
  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initialize' %>
-
+ <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap', :async => true %>
 </div>
 </div>
         
