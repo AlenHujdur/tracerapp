@@ -13,7 +13,6 @@ class LocationsController < ApplicationController
   def new
     @location = Location.new
     @camera = Camera.new
-    #@cameras = @location.cameras.create(camera_params)
   end
   
   def show
