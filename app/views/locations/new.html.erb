@@ -29,6 +29,7 @@
   <div id="my_camera"></div>
   <inline><input type=button value="Take Snapshot" onClick="take_snapshot()"> <%=f.submit "Save" %></inline><br />
    <%= f.fields_for(@camera) do |camera_form| %>
+    <%= camera_form.hidden_field :location_id %>
     <%= camera_form.hidden_field :image %>
     <%= camera_form.label :image %>: <br />
    <% end %>

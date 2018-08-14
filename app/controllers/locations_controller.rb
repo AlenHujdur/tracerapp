@@ -18,10 +18,10 @@ class LocationsController < ApplicationController
   def show
     location_id = params[:id]
     @location = Location.find(location_id)
-    @camera = @location.image
+    #@camera = Camera.find(params[:camera_id])
       lat = @location.latitude
       long = @location.longitude
-    @map = @location.newmap(lat,long)
+    #@map = @location.newmap(lat,long)
   end
 
   def create
@@ -41,7 +41,7 @@ class LocationsController < ApplicationController
   private
   
   def camera_params
-    params.require(:camera).permit(:image)
+    params.require(:camera).permit(:image,:location_id)
   end
 
   def location_params
