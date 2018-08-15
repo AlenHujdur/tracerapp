@@ -11,7 +11,7 @@ class Location < ApplicationRecord
   end
 
   def image
-    return Camera.image
+    #return Camera.image
   end
 
  #@location.cameras.each do |other|

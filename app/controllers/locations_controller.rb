@@ -12,21 +12,18 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
-    @camera = Camera.new
   end
   
   def show
     location_id = params[:id]
     @location = Location.find(location_id)
-    #@camera = Camera.find(params[:camera_id])
       lat = @location.latitude
       long = @location.longitude
-    #@map = @location.newmap(lat,long)
+    @map = @location.newmap(lat,long)
   end
 
   def create
-    @location = Location.new(location_params)
-    @camera = Camera.new(camera_params)
+    @location = Location.new
     @location.user = current_user
     if @location.save
       flash[:notice] = "Location saved!"
@@ -41,7 +38,7 @@ class LocationsController < ApplicationController
   private
   
   def camera_params
-    params.require(:camera).permit(:image,:location_id)
+    params.permit(:image)
   end
 
   def location_params

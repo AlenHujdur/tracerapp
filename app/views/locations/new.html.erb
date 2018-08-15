@@ -23,20 +23,12 @@
   </p>
   <%=f.label :info %><br>
   <p>
-  <%=f.text_area :info, rows: "4", cols: "50" %>
+  <%=f.text_area :info, rows: "4", cols: "50" %><br>
+  <%= link_to 'Take a picture', {:action=>"new", :controller=>"cameras"} %><br>
+  <%=f.submit "Save" %> <br><br>
   </p>
-  <%= link_to 'Take a picture', {:action=>"new", :controller=>"locations"} %>
-  <div id="my_camera"></div>
-  <inline><input type=button value="Take Snapshot" onClick="take_snapshot()"> <%=f.submit "Save" %></inline><br />
-   <%= f.fields_for(@camera) do |camera_form| %>
-    <%= camera_form.hidden_field :location_id %>
-    <%= camera_form.hidden_field :image %>
-    <%= camera_form.label :image %>: <br />
-   <% end %>
-    <div id="results">Your captured image will appear here...</div><br />
- <% end %>
+  <% end %>
  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initialize' %>
  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap', :async => true %>
 </div>
 </div>
-        

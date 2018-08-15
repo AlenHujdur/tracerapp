@@ -1,0 +1,15 @@
+
+<div class="container-fluid">
+<div id="form">
+<%= form_for(@camera) do |c| %>
+  <h4>Camera:</h4>
+  <div id="my_camera"></div>
+  <inline><input type=button value="Take Snapshot" onClick="take_snapshot()"> <%=c.submit "Save" %></inline><br />
+    <%= c.hidden_field :image %>
+    <%= c.label :image %>: <br />
+    <div id="results">Your captured image will appear here...</div><br />
+ <% end %>
+ </div>
+ </div>
+
+        
