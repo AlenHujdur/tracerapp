@@ -1,18 +1,13 @@
 class CamerasController < ApplicationController
-
-  def new
-    @location = Location.find(params[:id])
-    @camera = @location.cameras.new
-  end
   
   def create
     @location = Location.find(params[:id])
-    @camera = @location.cameras.create(camera_params)
-    if @camera.save
+    
+    if @camera = @location.cameras.create(camera_params)
       flash[:notice] = "Camera saved!"
       respond_to do |format|    
       format.html { redirect_to location_path(@location), notice: 'Picture was successfully created.' }
-    end
+      end
     else
        render 'new'
     end
@@ -21,7 +16,7 @@ class CamerasController < ApplicationController
   private
   
   def camera_params
-    params.permit(:image)
+    params.require(:camera).permit(:image)
   end
 
 end

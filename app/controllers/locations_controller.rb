@@ -9,10 +9,6 @@ class LocationsController < ApplicationController
       format.csv { send_data @locations.to_csv }
     end
   end
-
-  def new
-    @location = Location.new
-  end
   
   def show
     location_id = params[:id]
@@ -22,8 +18,12 @@ class LocationsController < ApplicationController
     @map = @location.newmap(lat,long)
   end
 
-  def create
+  def new
     @location = Location.new
+  end
+
+  def create
+    @location = Location.new(location_params)
     @location.user = current_user
     if @location.save
       flash[:notice] = "Location saved!"

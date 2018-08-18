@@ -8,7 +8,7 @@
 <div class="container-fluid">
 <div id="form">
 <h4 id="time11"></h4>
-<%= form_for(@location) do |f| %>
+<%= form_for @location, url: {action: "create"}, html:{class: "nifty_form"} do |f| %>
   <h4>Location:</h4>
   <div id="map">
 
@@ -24,8 +24,7 @@
   <%=f.label :info %><br>
   <p>
   <%=f.text_area :info, rows: "4", cols: "50" %><br>
-  #link_to 'Take a picture', :controller=>"cameras", :id =>"@location", :action=>"new"<br>
-  url_for([:new, :location, @camera])
+  <%= link_to 'New Snapshot? ', location_path(f)%>
   <%=f.submit "Save" %> <br><br>
   </p>
   <% end %>

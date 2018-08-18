@@ -2,12 +2,24 @@
 <h4>User: <%= @location.user.username %></h4>
 <h4>Latitude: <%= @location.latitude %></h4>
 <h4>Longitude: <%= @location.longitude %></h4>
+Country: <%= @map.get_country %><br>
+Region: <%= @map.get_region %><br>
+City: <%= @map.get_city %><br>
+Address: <%= @map.get_address %><br>
+<%= link_to 'Location details', @map.get_details %><br>
 
 <div id="res"></div>
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>
 <% else %>
 <%= picture_for(@location, size: 600)%><br>
+<%= image_tag @map.get_map_type %>
+<%= image_tag @map.get_satellite_type %>
+<%= image_tag @map.get_image_location %><br>
+
+<% end %><br>
+<%= link_to 'Back', locations_path %>
+
 
 <div class="container-fluid">
 <div id="form">
@@ -21,6 +33,3 @@
  <% end %>
  </div>
  </div>
-
-<% end %><br>
-<%= link_to 'Back', locations_path %>
