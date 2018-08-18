@@ -36,10 +36,6 @@ class LocationsController < ApplicationController
   end
 
   private
-  
-  def camera_params
-    params.permit(:image)
-  end
 
   def location_params
     params.require(:location).permit(:latitude, :longitude, :info, :user_id, :map_image, :camera_id)

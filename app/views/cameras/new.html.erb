@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
 <div id="form">
-<%= form_for(@camera) do |c| %>
+<%= form_with(model: [ @location, @location.cameras.build ], local: true) do |c| %>
   <h4>Camera:</h4>
   <div id="my_camera"></div>
   <inline><input type=button value="Take Snapshot" onClick="take_snapshot()"> <%=c.submit "Save" %></inline><br />

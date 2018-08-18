@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get '/login', to: "logins#new"
   post '/login', to: "logins#create"
   get '/logout', to: "logins#destroy"
-  resources :users
-  resources :locations do 
-    resources :cameras
-  end 
+  resources :users 
+    resources :locations do 
+      resources :cameras
+    end
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

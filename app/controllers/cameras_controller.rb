@@ -1,11 +1,12 @@
 class CamerasController < ApplicationController
 
   def new
-    @camera = Camera.new
+    @location = Location.find(params[:id])
+    @camera = @location.cameras.new
   end
   
   def create
-    @location = Location.find(params[:location_id])
+    @location = Location.find(params[:id])
     @camera = @location.cameras.create(camera_params)
     if @camera.save
       flash[:notice] = "Camera saved!"

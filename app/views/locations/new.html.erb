@@ -24,7 +24,8 @@
   <%=f.label :info %><br>
   <p>
   <%=f.text_area :info, rows: "4", cols: "50" %><br>
-  <%= link_to 'Take a picture', {:action=>"new", :controller=>"cameras"} %><br>
+  #link_to 'Take a picture', :controller=>"cameras", :id =>"@location", :action=>"new"<br>
+  url_for([:new, :location, @camera])
   <%=f.submit "Save" %> <br><br>
   </p>
   <% end %>
