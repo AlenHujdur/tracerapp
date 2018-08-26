@@ -28,7 +28,7 @@ class LocationsController < ApplicationController
     if @location.save
       flash[:notice] = "Location saved!"
       respond_to do |format|    
-      format.html { redirect_to location_path(@location), notice: 'Location was successfully created.' }
+      format.html { redirect_to location_path_locations, notice: 'Location was successfully created.' }
     end
     else
        render 'new'

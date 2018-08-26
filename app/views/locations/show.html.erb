@@ -1,26 +1,20 @@
-
 <h4>User: <%= @location.user.username %></h4>
 <h4>Latitude: <%= @location.latitude %></h4>
 <h4>Longitude: <%= @location.longitude %></h4>
+Country: <%= @map.get_country %><br>
+Region: <%= @map.get_region %><br>
+City: <%= @map.get_city %><br>
+Address: <%= @map.get_address %><br>
+<%= link_to 'Location details', @map.get_details %><br>
 
 <div id="res"></div>
 <% if picture_for(@location, size: 300) == nil %>
 <%= @location.image %><br>
 <% else %>
 <%= picture_for(@location, size: 600)%><br>
-
-<div class="container-fluid">
-<div id="form">
-<%= form_with(model: [ @location, @location.cameras.build ], local: true) do |c| %>
-  <h4>Camera:</h4>
-  <div id="my_camera"></div>
-  <inline><input type=button value="Take Snapshot" onClick="take_snapshot()"> <%=c.submit "Save" %></inline><br />
-    <%= c.hidden_field :image %>
-    <%= c.label :image %>: <br />
-    <div id="results">Your captured image will appear here...</div><br />
- <% end %>
- </div>
- </div>
+<%= image_tag @map.get_map_type %>
+<%= image_tag @map.get_satellite_type %>
+<%= image_tag @map.get_image_location %><br>
 
 <% end %><br>
 <%= link_to 'Back', locations_path %>
