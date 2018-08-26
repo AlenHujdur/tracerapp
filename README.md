@@ -2,7 +2,11 @@
 # README
 
 <h2>Tracerapp version 1.0</h2>
+Update from july 2018: 
+Google Maps is no longer free. You have to associate a credit card so that you can get billed if your site has requests that exceed the $200 credit they give you monthly for free. That is why you get the watermarked maps.
 
+For more information, see: https://cloud.google.com/maps-platform/pricing/
+https://stackoverflow.com/questions/50977913/google-maps-shows-for-development-purposes-only
 
 
 <li>jpeg camera gem, please check https://github.com/brunoocasali/webcamjs-plus-rails</li>

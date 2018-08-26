@@ -1,7 +1,6 @@
 class Location < ApplicationRecord
 
   belongs_to :user
-  has_many :cameras
   mount_base64_uploader :image, LocationImageUploader
   #csv export
   include GetLocation
@@ -9,6 +8,14 @@ class Location < ApplicationRecord
   def newmap(lat,long)
     @a = Map.new(lat,long)
   end
+
+  def image
+    #return Camera.image
+  end
+
+ #@location.cameras.each do |other|
+ #   puts other.image
+ #end
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
