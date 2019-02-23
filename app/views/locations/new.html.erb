@@ -5,7 +5,6 @@
     initialize();
   </script>
 </div>
- <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initMap', :async => true %>
 <div class="container-fluid">
 <div id="form">
 <h4 id="time11"></h4>
@@ -28,17 +27,17 @@
   </p>
   <%=f.submit "Save" %>
   <%= link_to 'Take a picture', {:action=>"new", :controller=>"cameras"} %>
-  <%# <div id="my_camera"></div>
+  <div id="my_camera"></div>
 
   <input type=button value="Take Snapshot" onClick="take_snapshot()">
 
   <div class="field">
     <%= f.hidden_field :image %>
-    <!--<#%= f.label :image %>: <br /> !-->
-    <!--div id="results">Your captured image will appear here...</div>
-  </div> %> !-->
+    <%= f.label :image %>
+    <div id="results">Your captured image will appear here...</div>
+  </div>
  <% end %>
- <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApzU3b0GAQzSzAUT9wtDNZtTZXi9WXi9Q&callback=initialize' %>
+ <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDk26SI9gvDy2-L_8IcjsLF8i7HXC8Sb0c&callback=initialize' %>
 
 </div>
 </div>
