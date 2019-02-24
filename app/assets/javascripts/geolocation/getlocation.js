@@ -2,7 +2,7 @@
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 51.260197, lng: 4.402771},
-    zoom: 16,
+    zoom: 20,
     mapTypeId: 'satellite'
   });
 
@@ -15,15 +15,10 @@ function initMap() {
         lng: position.coords.longitude
       };
 
-      lat1 = position.coords.latitude;
-      long1 = position.coords.longitude;
-
-      $("#latitude").val(position.coords.latitude);
-      $("#longitude").val(position.coords.longitude);
+      $("#latitude").val(pos['lat']);
+      $("#longitude").val(pos['lng']);
       
-      infoWindow.setPosition(pos);
-      console.log("Location: "+ lat1.toString()+", "+long1.toString() + city.toString());
-      infoWindow.setContent('Location found: '+ pos.lat.toString() +','+ pos.lng.toString()+'; ' + 'Time: '+ time.toString());
+      console.log("Location: "+ pos['lat']+", "+pos['lng']);
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());

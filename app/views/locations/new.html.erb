@@ -2,7 +2,6 @@
 <div id="map">
   <script type="text/javascript">
     initMap();
-    initialize();
   </script>
 </div>
 <div class="container-fluid">
@@ -37,8 +36,10 @@
     <div id="results">Your captured image will appear here...</div>
   </div>
  <% end %>
- <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDk26SI9gvDy2-L_8IcjsLF8i7HXC8Sb0c&callback=initialize' %>
-
+ 
+ <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk26SI9gvDy2-L_8IcjsLF8i7HXC8Sb0c&callback=initMap">
+</script>
 </div>
 </div>
         

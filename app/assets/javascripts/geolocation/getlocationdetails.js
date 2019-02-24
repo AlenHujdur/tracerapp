@@ -7,7 +7,7 @@ var geocoder;
 function successFunction(position) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
-    codeLatLng(lat, lng)
+    codeLatLng(lat, lng);
 }
 
 function errorFunction(){
@@ -18,10 +18,16 @@ function errorFunction(){
     geocoder = new google.maps.Geocoder(document.getElementById('map'));
   }
 
-  function codeLatLng(lat, lng) {
+  function codeLatLng(lat1, lng1) {
 
-    var latlng = new google.maps.LatLng(lat, lng);
-    geocoder.geocode({'latLng': latlng}, function(results, status) {
+    var marker = new google.maps.Marker({
+      // The below line is equivalent to writing:
+      // position: new google.maps.LatLng(-34.397, 150.644)
+      position: {lat: lat1, lng: lng1},
+      map: map
+    });
+
+    geocoder.geocode({'latLng': marker}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
       console.log(results)
         if (results[1]) {

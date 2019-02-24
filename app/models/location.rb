@@ -18,7 +18,7 @@ class Location < ApplicationRecord
       end 
     end
   end
-
+@api = GOOGLE_MAPS_API
 #xlsx export
 
 
